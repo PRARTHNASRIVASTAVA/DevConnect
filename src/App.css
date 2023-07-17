@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+.mycard {
+  /* border: 2px solid red; */
+  width: 25%;
+  border-radius: 10px;
+  padding: 50px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.481);
+  background-color: lightgreen;
+}
+.home{
+  display: flex;
+  flex-direction: column;
+  height: 550px;
+  padding: 3px,20px;
+  justify-content: center;
+  align-items: center;
+}
+/* for background */
+#home::before{
+  content: "";
+  position: absolute;
+  background: url(https://csvending.com/wp-content/uploads/2018/08/food-bg-1.jpg) no-repeat center/cover;
+  height: 642px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.89;
+}
+#home h1{
+  color: white;
+  text-align: center;
+}
+
+.main{
+  background :url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxvZ2dpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60') cover;
+  height: 55vh;
+  width: 100%;
+}
