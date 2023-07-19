@@ -4,7 +4,7 @@ const app = express();
 const port = 8000;
 
  const userRouter = require('./routers/userRouter');
-const laptopRouter = require('./routers/blogRouter');
+const blogRouter = require('./routers/blogRouter');
 
 
 
@@ -12,7 +12,7 @@ const laptopRouter = require('./routers/blogRouter');
 // app.use(cors());
 app.use(express.json());
  app.use('/user', userRouter);
-app.use('/laptop', laptopRouter)
+app.use('/blog', blogRouter);
 
 //  to accept request from client`
 // routing

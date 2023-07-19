@@ -6,4 +6,4 @@ const ViewBlog = () => {
   )
 }
 
-export default ViewBlog
+export default ViewBlog;
