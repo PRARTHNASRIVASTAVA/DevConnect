@@ -64,6 +64,7 @@ const signupSchema = Yup.object().shape({
             <div className="card-body">
               <h2 className="my-5 text-center">Signup Form</h2>
   
+              
               <form onSubmit={signupForm.handleSubmit}>
                 <label htmlFor="">Name</label>
                 <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.name && signupForm.errors.name}</span>
