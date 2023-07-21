@@ -5,6 +5,7 @@ const myschema = new Schema({
     title : String,
     description : String,
     image : String,
+    data: String,
     user : String,
     createdAt : {type : Date, default: Date.now},
 });

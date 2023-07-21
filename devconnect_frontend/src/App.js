@@ -24,7 +24,7 @@ function App() {
           <Route element={<Login />} path='login' />
           <Route element={<Signup />} path='signup' />
           <Route element={<AddBlog />} path='addblog' />
-          <Route element={<ViewBlog />} path='viewblog' />
+          <Route element={<ViewBlog />} path='viewblog/:id' />
           <Route element={<Profile />} path='profile' />
 
 

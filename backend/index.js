@@ -3,16 +3,22 @@ const express = require('express');
 const app = express();
 const port = 8000;
 
+const cors = require('cors');
+
  const userRouter = require('./routers/userRouter');
 const blogRouter = require('./routers/blogRouter');
+const utilRouter = require('./routers/utils');
 
 
 
 // middleware
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
  app.use('/user', userRouter);
 app.use('/blog', blogRouter);
+app.use('/util', utilRouter);
+
+app.use(express.static('./uploads'));
 
 //  to accept request from client`
 // routing
