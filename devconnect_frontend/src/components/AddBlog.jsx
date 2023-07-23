@@ -30,7 +30,7 @@ const AddBlog = () => {
 
       if (res.status === 200) {
         Swal.fire({
-          icon: 'error',
+          icon: 'success',
           title: 'Success',
           text: 'Blog Published'
         })

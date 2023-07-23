@@ -16,7 +16,18 @@ body {
     margin-bottom: 40px;
     padding: 25px;
     border: 2px solid #050404ee;
-    background-color: rgba(220, 20, 60, 0.454);
+    background-color: rgba(196, 121, 136, 0.658); 
+    /* yaha pe se vo red wala color change hoga.
+    aur dikkat btao */
+    /* yeh home page ki background image badi hai yaa aise blogs uske upar ayege
+    image badi nahi h blogs aise hi dikhenge uske uper chao to change kr lo ya fir koi aur color daal do background mei image ki jaagh theek */
+    /* ab dekhna signup karege phir login incorrect batayega bina login ke blogs add horhe phle ye dekho */
+    /* dekha..?hmmm
+    lekin ye kaise pta chalega ki koi writer sign in h ya nahi
+     */
+    /* wahi toh dikkat */
+    /* ab dekhna signup karugi phir login */
+    
     border-radius: 5px;
   }
   

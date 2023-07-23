@@ -63,14 +63,13 @@ body {
   }
   
   /* Featured posts section styles */
-  .featured-posts {
     /* Add styles for featured blog posts or cards */
-  }
+  
   
   /* Categories section styles */
-  .categories {
+  
     /* Add styles for categories or tags section */
-  }
+
   
   /* Footer styles */
   .footer {
@@ -92,9 +91,9 @@ body {
   }
   
   .blog-post {
-    width: calc(33.33% - 20px); /* Adjust the width of each blog post card */
+    width: calc(33.3%-20px); /* Adjust the width of each blog post card */
     margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(18, 14, 14, 0.2);
     border-radius: 5px;
     overflow: hidden;
     background-color: white;
@@ -130,7 +129,7 @@ body {
     background-color: #ffd700;
     color: black;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 8px 13px;
     border-radius: 5px;
     margin-top: 20px;
     transition: background-color 0.3s ease;

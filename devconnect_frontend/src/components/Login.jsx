@@ -31,10 +31,11 @@ const Login = () => {
 
       if (res.status === 200) {
         Swal.fire({
-          icon: 'error',
-          title: 'Login Failed',
-          text: 'Email or Password is incorrect'
+          icon: 'success',
+          title: 'Share your thoughts with others',
+          text: 'Successfully logged in'
         });
+          
       }else if(res.status === 401){
         Swal.fire({
           icon: 'error',
@@ -80,6 +81,9 @@ const Login = () => {
               <span style={{ color: 'white', fontSize: 15, marginLeft: 10 }}>{loginForm.errors.password}</span>
 
               <input class="form-control mt-3" type="password" id="password" onChange={loginForm.handleChange} value={loginForm.values.password} name="password" />
+              
+             
+
 
               <button type="submit" className="btn btn-secondary w-100 mt-5">Login</button>
             </form>
