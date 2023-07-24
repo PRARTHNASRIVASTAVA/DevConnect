@@ -7,7 +7,7 @@ body {
   
   .view-blog-container {
     max-width: 100%;
-      background-color: aqua;
+      background-color: rgb(0, 217, 255);
     color: white;
     padding: 25px;
   }
@@ -16,7 +16,7 @@ body {
     margin-bottom: 40px;
     padding: 25px;
     border: 2px solid #050404ee;
-    background-color: rgba(196, 121, 136, 0.658); 
+    background-color: rgba(121, 194, 196, 0.658); 
     /* yaha pe se vo red wala color change hoga.
     aur dikkat btao */
     /* yeh home page ki background image badi hai yaa aise blogs uske upar ayege
@@ -42,7 +42,7 @@ body {
   }
   
   .blog-date {
-    color: #888;
+    color:blue;
   }
   
   .blog-image img {

@@ -7,10 +7,11 @@ body {
   
   /* Set background image for the home page */
   .home-container {
-    background-image: url('bgimg.png');
+    /* background-image: url('bgimg.png'); */
     background-size: cover;
     background-position: center;
     height: 100vh;
+    background-color:gray;
   }
   
   /* Header styles */
@@ -76,7 +77,7 @@ body {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
   }
   
   /* HomePage.css */
@@ -91,7 +92,7 @@ body {
   }
   
   .blog-post {
-    width: calc(33.3%-20px); /* Adjust the width of each blog post card */
+    width: calc(45.3%-20px);/* Adjust the width of each blog post card */
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(18, 14, 14, 0.2);
     border-radius: 5px;
