@@ -4,15 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import * as Yup from 'yup';
 import './style.css';
+import { useUserContext } from '../UserContext';
 // import { link } from '../../../backend/routers/blogRouter';
 const loginSchema = Yup.object().shape({
-
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().required(' Password is Required')
 });
 
 const Login = () => {
   const navigate = useNavigate();
+  const {setLoggedin} = useUserContext();
   const loginForm = useFormik({
     initialValues: {
       email: '',
@@ -35,6 +36,11 @@ const Login = () => {
           title: 'Share your thoughts with others',
           text: 'Successfully logged in'
         });
+
+        const data = await res.json();
+        sessionStorage.setItem('user', JSON.stringify(data));
+        navigate('/addblog');
+        setLoggedin(true);
           
       }else if(res.status === 401){
         Swal.fire({
@@ -43,9 +49,9 @@ const Login = () => {
           text: 'Email or Password is incorrect'
         });
 
-        const data = await res.json();
-        sessionStorage.setItem('user', JSON.stringify(data));
-        navigate('/addblog');
+        
+        
+
         
       } else {
         Swal.fire({
