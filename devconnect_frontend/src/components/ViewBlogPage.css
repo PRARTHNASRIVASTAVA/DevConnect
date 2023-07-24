@@ -1,0 +1,61 @@
+/* ViewBlogPage.css */
+/* Reset default margin and padding for the entire page */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .view-blog-container {
+    max-width: 100%;
+      background-color: rgb(0, 217, 255);
+    color: white;
+    padding: 25px;
+  }
+  
+  .blog-post {
+    margin-bottom: 40px;
+    padding: 25px;
+    border: 2px solid #050404ee;
+    background-color: rgba(121, 194, 196, 0.658); 
+    /* yaha pe se vo red wala color change hoga.
+    aur dikkat btao */
+    /* yeh home page ki background image badi hai yaa aise blogs uske upar ayege
+    image badi nahi h blogs aise hi dikhenge uske uper chao to change kr lo ya fir koi aur color daal do background mei image ki jaagh theek */
+    /* ab dekhna signup karege phir login incorrect batayega bina login ke blogs add horhe phle ye dekho */
+    /* dekha..?hmmm
+    lekin ye kaise pta chalega ki koi writer sign in h ya nahi
+     */
+    /* wahi toh dikkat */
+    /* ab dekhna signup karugi phir login */
+    
+    border-radius: 5px;
+  }
+  
+  .blog-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .blog-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .blog-date {
+    color:blue;
+  }
+  
+  .blog-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .blog-content {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  

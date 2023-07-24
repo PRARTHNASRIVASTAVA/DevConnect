@@ -59,25 +59,25 @@ const signupSchema = Yup.object().shape({
   
     return (
       <div>
-        <div className="col-md-3 mx-auto">
-          <div className="card">
+        <div className="container mx-auto p-5 mt-5">
+          <div className="card p-2">
             <div className="card-body">
-              <h2 className="my-5 text-center">Signup Form</h2>
+              <h2 className="my-1 text-center">Signup Form</h2>
   
               
               <form onSubmit={signupForm.handleSubmit}>
                 <label htmlFor="">Name</label>
-                <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.name && signupForm.errors.name}</span>
+                <span style={{color: 'white', fontSize: 15, marginLeft: 10}}>{signupForm.touched.name && signupForm.errors.name}</span>
                 <input className="form-control mb-3" onChange={signupForm.handleChange} value={signupForm.values.name} name="name" />
                 
                 <label htmlFor="">Email</label>
-                <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.email && signupForm.errors.email}</span>
+                <span style={{color: 'white', fontSize: 15, marginLeft: 10}}>{signupForm.touched.email && signupForm.errors.email}</span>
                 <input className="form-control mb-3" onChange={signupForm.handleChange} value={signupForm.values.email} name="email" />
   
                 <label htmlFor="">Password</label>
-                <span style={{color: 'red', fontSize: 15, marginLeft: 10}}>{signupForm.touched.password && signupForm.errors.password}</span>
+                <span style={{color: 'white', fontSize: 15, marginLeft: 10}}>{signupForm.touched.password && signupForm.errors.password}</span>
                 <input className="form-control mb-3" type="password" onChange={signupForm.handleChange} value={signupForm.values.password} name="password" />
-                <button type="submit" className="btn btn-danger w-100 mt-5">Signup</button>
+                <button type="submit" className="btn btn-secondary w-100 mt-5">Signup</button>
               </form>
   
                 

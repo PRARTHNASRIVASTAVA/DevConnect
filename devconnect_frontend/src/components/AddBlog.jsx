@@ -1,20 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik'
 import Swal from 'sweetalert2';
-
+import MDEditor from '@uiw/react-md-editor';
 
 const AddBlog = () => {
 
+  const [value, setValue] = useState('');
+  const [selFile, setSelFile] = useState('');
+
   const addblogForm = useFormik({
-    title: {
+    initialValues: {
+      title: '',
      description : '',
      image : '',
-     user : '' 
-      
+     user : '' ,
+     data: ''
     },
     onSubmit: async (values) => {
+      values.image = selFile;
+      values.data = value;
       console.log(values);
-      const res = await fetch('http://localhost:5000/blog/add', {
+      const res = await fetch('http://localhost:8000/blog/add', {
         method: 'POST',
         body: JSON.stringify(values),
         headers: { 'Content-Type': 'application/json' }
@@ -24,9 +30,9 @@ const AddBlog = () => {
 
       if (res.status === 200) {
         Swal.fire({
-          icon: 'error',
-          title: 'Login Failed',
-          text: 'Email or Password is incorrect'
+          icon: 'success',
+          title: 'Success',
+          text: 'Blog Published'
         })
       } else {
         Swal.fire({
@@ -40,27 +46,43 @@ const AddBlog = () => {
     // validationSchema: addblogSchema
   });
 
+  const uploadFile = (e) => {
+    const file = e.target.files[0];
+    const fd = new FormData();
+    setSelFile(file.name);
+    fd.append("myfile", file);
+    fetch("http://localhost:8000/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log("file uploaded");
+      }
+    });
+  };
+
 
   return (
-    <div>AddBlog
+    <div className='container mt-5'>
       <form onSubmit={addblogForm.handleSubmit}>
 
-        <label htmlFor="title">Title</label>
-        <span style={{ color: 'red', fontSize: 15, marginLeft: 10 }}>{addblogForm.touched.title && addblogForm.errors.title}</span>
-        <input className="form-control mb-3" onChange={addblogForm.handleChange} value={addblogForm.values.title} title="title" />
+        <label htmlFor="title" className='fs-4'>Title</label>
+        <span style={{ color: 'red', fontSize: 20, marginLeft: 10 }}>{addblogForm.touched.title && addblogForm.errors.title}</span>
+        <input className="form-control mb-3" onChange={addblogForm.handleChange} value={addblogForm.values.title} id="title" />
 
-        <label htmlFor="description">Description</label>
-        <span style={{ color: 'red', fontSize: 15, marginLeft: 10 }}>{addblogForm.touched.description && addblogForm.errors.description}</span>
-        <input className="form-control mb-3" onChange={addblogForm.handleChange} value={addblogForm.values.description} description="description" />
+        <label htmlFor="description" className='fs-4'>Description</label>
+        <span style={{ color: 'red', fontSize: 12, marginLeft: 10 }}>{addblogForm.touched.description && addblogForm.errors.description}</span>
+        <input className="form-control mb-3" onChange={addblogForm.handleChange} value={addblogForm.values.description} id="description" />
 
-        <label htmlFor="image">Image</label>
-        <span style={{ color: 'red', fontSize: 15, marginLeft: 10 }}>{addblogForm.touched.image && addblogForm.errors.image}</span>
-        <input className="form-control mb-3" onChange={addblogForm.handleChange} value={addblogForm.values.image} image="image" />
+        <label htmlFor="image" className='fs-4'>Image</label>
+        <input className="form-control mb-3" onChange={uploadFile}  type='file' />
 
       
-        <label htmlFor="createat">CreatedAt</label>
-        <span style={{ color: 'red', fontSize: 15, marginLeft: 10 }}>{addblogForm.touched.createdat && addblogForm.errors.createdat}</span>
-        <input className="form-control mb-3" onChange={addblogForm.handleChange} value={addblogForm.values.createdat} createdat="createdat" />
+        <label className='fs-4'>Content</label>
+        <MDEditor
+        value={value}
+        onChange={setValue}
+      />
 
         <button className='btn btn-primary'>Submit</button>
       </form>

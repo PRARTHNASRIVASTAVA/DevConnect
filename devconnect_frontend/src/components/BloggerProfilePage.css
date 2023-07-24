@@ -1,0 +1,44 @@
+/* BloggerProfilePage.css */
+/* Reset default margin and padding for the entire page */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .blogger-profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .blogger-name {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  
+  .blogger-username {
+    color: #888;
+    font-size: 1.2rem;
+  }
+  
+  .blogger-bio {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  .blogger-profile-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+  
+  /* ...Other styles... */
+  
